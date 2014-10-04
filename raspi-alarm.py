@@ -7,14 +7,9 @@
 import sched
 import time
 import os
-import RPi.GPIO as GPIO
 from datetime import datetime, timedelta
-
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(12, GPIO.OUT)
-
-alarm_time = '12:10:30+01:00'
-alarm_mp3 = '/var/mp3/alarm/mp3'
+alarm_time = addSecs(datetime.now().isoformat(), 15) # for testing.
+#alarm_sound = '/var/mp3/alarm/mp3'
 
 def checkTime():
   check_now = datetime.now().isoformat()
@@ -24,14 +19,14 @@ def checkTime():
     
 def startAlarm():
   # used to start the audio, take the PIN, and either snooze or stop the alarm.
-  alarm_sound.play()
+  #alarm_sound.play()
   date_code = datetime.now().strftime('%d%m%y')
   stop_code = raw_input('Today\'s Date')
   if stop_code == date_code:
-    alarm_sound.stop()
+    #alarm_sound.stop()
     return 'Good morning!'
   else:
-    alarm_sound.snooze()
+    #alarm_sound.snooze()
     alarm_time = addSecs(alarm_time, 600) 
   return 'You lazy son-of-a...'
   
@@ -43,5 +38,5 @@ def startAlarm():
 	
 '''
 Input: USB Number Pad
-Output: 1 x LED, 1 x Speaker
+Output: 1 x Speaker
 '''
