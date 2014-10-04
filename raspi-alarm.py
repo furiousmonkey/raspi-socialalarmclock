@@ -30,7 +30,7 @@ def checkTime():
     
 def startAlarm():
   # used to start the audio, take the PIN, and either snooze or stop the alarm.
- alarm_sound.play()
+  alarm_sound.play()
   date_code = datetime.now().strftime("%d%m%y")
   stop_code = raw_input("Today\'s Date")
   if stop_code == date_code:
