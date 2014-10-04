@@ -8,8 +8,10 @@ import sched
 import time
 import os
 from datetime import datetime, timedelta
-alarm_time = addSecs(datetime.now().isoformat(), 15) # for testing.
-#alarm_sound = '/var/mp3/alarm/mp3'
+
+def beginAlarm():
+	alarm_time = addSecs(datetime.now().isoformat(), 15) # for testing.
+	#alarm_sound = '/var/mp3/alarm/mp3'
 
 def checkTime():
   check_now = datetime.now().isoformat()
@@ -27,14 +29,15 @@ def startAlarm():
     return 'Good morning!'
   else:
     #alarm_sound.snooze()
-    alarm_time = addSecs(alarm_time, 600) 
-  return 'You lazy son-of-a...'
+	alarm_time = addSecs(alarm_time, 600) 
+	return 'You lazy son-of-a...'
   
 def addSecs(tm, secs):
     fulldate = datetime.datetime(100, 1, 1, tm.hour, tm.minute, tm.second)
     fulldate = fulldate + datetime.timedelta(seconds=secs)
     return fulldate.time()
-	
+
+beginAlarm()
 	
 '''
 Input: USB Number Pad
