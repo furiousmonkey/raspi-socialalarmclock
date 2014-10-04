@@ -30,7 +30,7 @@ def startAlarm():
     alarm_time = addSecs(alarm_time, 600) 
   return 'You lazy son-of-a...'
   
-  def addSecs(tm, secs):
+def addSecs(tm, secs):
     fulldate = datetime.datetime(100, 1, 1, tm.hour, tm.minute, tm.second)
     fulldate = fulldate + datetime.timedelta(seconds=secs)
     return fulldate.time()
