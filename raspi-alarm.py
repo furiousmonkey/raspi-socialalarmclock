@@ -7,7 +7,7 @@
 import sched
 import time
 import os
-import RasPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 from datetime import datetime, timedelta
 
 GPIO.setmode(GPIO.BOARD)
