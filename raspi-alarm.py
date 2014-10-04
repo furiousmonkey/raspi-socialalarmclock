@@ -2,7 +2,7 @@
 
 ## raspi-alarm.py -- for waking up
 ## Created by furiousmonkey
-## Last Updated 4-Oct-2014
+## Last Updated 4-Oct-2014 updated!
 
 import sched
 import time
