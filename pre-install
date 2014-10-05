@@ -1,0 +1,16 @@
+Set up the RasPi for facebook integration
+=========================================
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+pip install -U pip
+sudo pip install virtualenv
+virtualenv facebookenv
+source facebookenv/bin/activate
+sudo pip install facebook-sdk
+
+# tested and working
+
+Security
+========
+
